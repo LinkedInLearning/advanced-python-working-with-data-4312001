@@ -19,8 +19,7 @@ print(len(largequakes))
 header = ["Place", "Magnitude", "Link", "Date"]
 rows = []
 for quake in largequakes:
-  thedate = datetime.datetime.fromtimestamp(int(quake["properties"]["time"])/1000)
-  print(thedate)
+  thedate = datetime.date.fromtimestamp(int(quake["properties"]["time"])/1000)
   rows.append([quake["properties"]["place"],quake["properties"]["mag"],quake["properties"]["url"],thedate])
 
 with open("largequakes.csv", "w") as csvfile:
