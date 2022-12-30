@@ -3,6 +3,7 @@
 
 import json
 import pprint
+import datetime
 
 
 def squareFunc(x):
@@ -52,7 +53,8 @@ results = list(filter(bigmag, data['features']))
 def simplify(q):
     return {
         "place": q['properties']['place'],
-        "magnitude": q['properties']['mag']
+        "magnitude": q['properties']['mag'],
+        "date": str(datetime.date.fromtimestamp(q['properties']["time"]/1000))
     }
 
 
