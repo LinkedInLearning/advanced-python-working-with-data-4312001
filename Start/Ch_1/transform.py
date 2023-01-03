@@ -35,6 +35,11 @@ grades = (81, 89, 94, 78, 61, 66, 99, 74)
 #     data = json.load(datafile)
 
 
-# TODO: filter the data down to the largest events
+# filter the data down to the largest events
+# def bigmag(q):
+#     return q['properties']['mag'] is not None and q['properties']['mag'] >= 6
+
+
+# results = list(filter(bigmag, data['features']))
 
 # TODO: transform the largest events into a simpler structure

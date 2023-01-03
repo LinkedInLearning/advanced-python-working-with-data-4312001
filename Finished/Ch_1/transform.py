@@ -59,4 +59,4 @@ def simplify(q):
 
 
 results = list(map(simplify, results))
-pprint.pp(results)
+pprint.pp(results, indent=2)
