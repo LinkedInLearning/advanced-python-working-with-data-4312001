@@ -11,7 +11,7 @@ with open("../../30DayQuakes.json", "r") as datafile:
     data = json.load(datafile)
 
 # Create a CSV file with the following information:
-# 40 most significant seismic events
+# 40 most significant seismic events, ordered by most recent
 # Header row: Magnitude, Place, Felt Reports, Date, and Google Map link
 # Date should be in the format of YYYY-MM-DD
 
@@ -21,15 +21,14 @@ def getsig(x):
     return 0 if sig is None else sig
 
 
-significantevents = sorted(data["features"], key=getsig)
-significantevents.sort(key=getsig, reverse=True)
+significantevents = sorted(data["features"], key=getsig, reverse=True)
+significantevents = significantevents[:40]
+significantevents.sort(key=lambda e: e["properties"]["time"], reverse=True)
+
 header = ["Magnitude", "Place", "Felt Reports", "Date", "Link"]
 rows = []
 
-for i, event in enumerate(significantevents):
-    if i == 40:
-        break
-
+for event in significantevents:
     thedate = datetime.date.fromtimestamp(
         int(event["properties"]["time"]) / 1000)
     lat = event["geometry"]["coordinates"][1]

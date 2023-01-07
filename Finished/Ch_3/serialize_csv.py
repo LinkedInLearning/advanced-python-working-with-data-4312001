@@ -17,7 +17,6 @@ def isbig(x):
 
 # Our code will create a CSV file
 largequakes = list(filter(isbig, data["features"]))
-print(len(largequakes))
 header = ["Place", "Magnitude", "Link", "Date"]
 rows = []
 for quake in largequakes:
