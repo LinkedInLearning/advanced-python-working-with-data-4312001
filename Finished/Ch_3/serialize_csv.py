@@ -15,16 +15,21 @@ def isbig(x):
     return mag is not None and mag > 5
 
 
-# Our code will create a CSV file
+# Filter the data by quakes that are larger than 5 magnitude
 largequakes = list(filter(isbig, data["features"]))
+
+# Create the header and row structures for the data
 header = ["Place", "Magnitude", "Link", "Date"]
 rows = []
+
+# populate the rows with the resulting quake data
 for quake in largequakes:
     thedate = datetime.date.fromtimestamp(
         int(quake["properties"]["time"])/1000)
     rows.append([quake["properties"]["place"], quake["properties"]
                 ["mag"], quake["properties"]["url"], thedate])
 
+# write the results to the CSV file
 with open("largequakes.csv", "w") as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     writer.writerow(header)

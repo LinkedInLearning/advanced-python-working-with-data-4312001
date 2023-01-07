@@ -15,6 +15,7 @@ def isbig(x):
     return mag is not None and mag > 6
 
 
+# define a function to transform complex JSON to simpler JSON
 def simplequake(q):
     return {
         "place": q["properties"]["place"],
@@ -25,13 +26,15 @@ def simplequake(q):
     }
 
 
+# filter the data to only include large quakes
 largequakes = list(filter(isbig, data["features"]))
+# transform the data to a JSON format we want to save
 largequakes = list(map(simplequake, largequakes))
 
-# use the dumps function to write json to a string
+# use the dumps() function to write json to a string
 str = json.dumps(largequakes, sort_keys=True, indent=4)
 print(str)
 
-# use the dump function to write json to a file
+# use the dump() function to write json to a file
 with open("largequakes.json", "w") as outfile:
     json.dump(largequakes, outfile, sort_keys=True, indent=4)
