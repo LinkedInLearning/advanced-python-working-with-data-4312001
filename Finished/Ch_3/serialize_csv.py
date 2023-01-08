@@ -30,7 +30,7 @@ for quake in largequakes:
                 ["mag"], thedate, quake["properties"]["url"]])
 
 # write the results to the CSV file
-with open("largequakes.csv", "w") as csvfile:
+with open("largequakes.csv", "w", newline='', encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     writer.writerow(header)
     writer.writerows(rows)
