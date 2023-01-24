@@ -11,7 +11,7 @@ import json
 # 4: Print the top 10 most significant events
 
 # open the data file and load the JSON
-with open("../../30DayQuakes.json", "r") as datafile:
+with open("../../30DayQuakes.json", "r", encoding="utf-8") as datafile:
     data = json.load(datafile)
 
 # 1: We can just use the provided data, or we can use len() to get the length of the "features"
