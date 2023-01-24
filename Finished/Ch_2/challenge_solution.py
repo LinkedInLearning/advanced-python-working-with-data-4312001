@@ -2,7 +2,7 @@
 # Programming challenge: use advanced data collections on the earthquake data
 
 import json
-from collections import Counter, defaultdict
+from collections import defaultdict
 
 
 # open the data file and load the JSON
