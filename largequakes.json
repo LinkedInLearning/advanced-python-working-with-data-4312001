@@ -1,0 +1,20 @@
+[
+    {
+        "date": "2020-03-18",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/us60008hzl",
+        "mag": 6.2,
+        "place": "246km S of Kangin, Indonesia"
+    },
+    {
+        "date": "2020-03-18",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/us60008hkg",
+        "mag": 6.1,
+        "place": "97km NNW of Sola, Vanuatu"
+    },
+    {
+        "date": "2020-03-14",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/us60008fl8",
+        "mag": 6.3,
+        "place": "298km NE of Raoul Island, New Zealand"
+    }
+]

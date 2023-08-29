@@ -9,6 +9,7 @@ fruits = ['apple', 'pear', 'orange', 'banana',
 
 # use a dictionary to count each element
 fruitCounter = defaultdict(int)
+print(fruitCounter)
 
 # Count the elements in the list
 for fruit in fruits:
