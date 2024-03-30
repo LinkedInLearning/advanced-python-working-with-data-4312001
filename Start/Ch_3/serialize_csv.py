@@ -19,7 +19,21 @@ def isbig(x):
 largequakes = list(filter(isbig, data["features"]))
 
 # TODO: Create the header and row structures for the data
+header = ["Place", "Magnitude", "Link", "Date"]
 
 # TODO: populate the rows with the resulting quake data
+rows = []
+for quake in largequakes:
+    thedate = datetime.date.fromtimestamp(
+        int(quake["properties"]["time"] / 1000))
+    rows.append([quake["properties"]["place"],
+                quake["properties"]["mag"],
+                quake["properties"]["url"],
+                thedate])
+
 
 # TODO: write the results to the CSV file
+with open("largequakes.csv", "w") as csvfile:
+    writer = csv.writer(csvfile, delimiter=",")
+    writer.writerow(header)
+    writer.writerows(rows)
